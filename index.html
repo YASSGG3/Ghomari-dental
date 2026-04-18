@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghomari Care Dental — Excellence en Soins Dentaires</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #152336;
+    --navy-soft: #1e3050;
+    --gold: #c9a84c;
+    --gold-light: #e2c67a;
+    --cream: #faf8f3;
+    --cream-dark: #f0ece0;
+    --text-muted: #6b7a8d;
+    --text-mid: #3a4a5c;
+    --border: rgba(201,168,76,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 5%;
+    background: rgba(250,248,243,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+
+  .logo-icon {
+    width: 38px; height: 38px; background: var(--navy);
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0;
+  }
+
+  .logo-icon svg { width: 20px; height: 20px; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+
+  .logo-text span:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--navy); letter-spacing: 0.02em;
+  }
+
+  .logo-text span:last-child {
+    font-size: 0.62rem; color: var(--gold);
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none; font-size: 0.82rem;
+    color: var(--text-mid); letter-spacing: 0.05em;
+    text-transform: uppercase; transition: color 0.2s; position: relative;
+  }
+
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -3px; left: 0; right: 100%;
+    height: 1px; background: var(--gold); transition: right 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a:hover::after { right: 0; }
+
+  .nav-cta {
+    background: var(--navy); color: var(--gold) !important;
+    padding: 0.55rem 1.4rem; border-radius: 2px;
+    font-size: 0.78rem !important; letter-spacing: 0.1em;
+    text-transform: uppercase; transition: all 0.25s ease !important;
+  }
+
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    position: relative; overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 9rem 5% 5rem 8%;
+    position: relative; z-index: 2;
+    animation: fadeUp 1s ease 0.1s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 1.8rem;
+  }
+
+  .hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-weight: 300; line-height: 1.12;
+    color: var(--navy); margin-bottom: 1.6rem;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--gold); }
+
+  .hero-sub {
+    font-size: 1rem; font-weight: 300;
+    color: var(--text-muted); line-height: 1.7;
+    max-width: 420px; margin-bottom: 2.8rem;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--navy); color: var(--gold);
+    padding: 0.9rem 2.2rem; border: none; border-radius: 2px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s; display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--gold); color: var(--navy); }
+
+  .btn-outline {
+    border: 1px solid var(--navy); color: var(--navy);
+    padding: 0.9rem 2.2rem; border-radius: 2px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    display: inline-block; transition: all 0.25s;
+  }
+
+  .btn-outline:hover { background: var(--navy); color: var(--cream); }
+
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 4rem;
+    padding-top: 2.5rem; border-top: 1px solid var(--border);
+  }
+
+  .stat-item { display: flex; flex-direction: column; gap: 0.3rem; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 400;
+    color: var(--navy); line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.72rem; color: var(--text-muted);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  .hero-right { position: relative; overflow: hidden; animation: fadeIn 1.2s ease 0.4s both; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .hero-visual-fallback {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 50%, #1a3060 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+
+  .hero-visual-fallback::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 70%, rgba(201,168,76,0.15) 0%, transparent 60%);
+  }
+
+  .tooth-svg-hero {
+    width: 260px; opacity: 0.9;
+    filter: drop-shadow(0 0 60px rgba(201,168,76,0.3));
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .hero-overlay-card {
+    position: absolute; bottom: 2.5rem; left: 2rem;
+    background: rgba(250,248,243,0.95); backdrop-filter: blur(10px);
+    padding: 1.2rem 1.5rem; border-radius: 4px;
+    border-left: 3px solid var(--gold); min-width: 200px;
+  }
+
+  .hero-overlay-card p {
+    font-size: 0.7rem; color: var(--text-muted);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem;
+  }
+
+  .hero-overlay-card strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--navy);
+  }
+
+  /* SECTIONS */
+  section { padding: 7rem 8%; }
+
+  .section-tag {
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500;
+    display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.2rem;
+  }
+
+  .section-tag::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.2; color: var(--navy);
+  }
+
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  /* SERVICES */
+  .services-section {
+    background: var(--navy); padding: 7rem 8%;
+    position: relative; overflow: hidden;
+  }
+
+  .services-section::before {
+    content: ''; position: absolute; top: -50%; right: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  }
+
+  .services-section .section-tag { color: var(--gold-light); }
+  .services-section .section-tag::before { background: var(--gold-light); }
+  .services-section .section-title { color: var(--cream); }
+  .services-section .section-title em { color: var(--gold); }
+
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;
+  }
+
+  .services-header p {
+    max-width: 360px; color: rgba(250,248,243,0.55);
+    font-size: 0.95rem; line-height: 1.7; font-weight: 300;
+  }
+
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; }
+
+  .service-card {
+    background: var(--navy-mid); padding: 2.8rem 2rem;
+    transition: all 0.35s ease; position: relative;
+    overflow: hidden; cursor: default;
+  }
+
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px; background: var(--gold);
+    transform: scaleX(0); transition: transform 0.35s ease;
+  }
+
+  .service-card:hover { background: var(--navy-soft); transform: translateY(-4px); }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; margin-bottom: 1.8rem; transition: all 0.3s;
+  }
+
+  .service-card:hover .service-icon { background: rgba(201,168,76,0.2); border-color: var(--gold); }
+  .service-icon svg { width: 24px; height: 24px; }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 400;
+    color: var(--cream); margin-bottom: 0.8rem;
+  }
+
+  .service-card p {
+    font-size: 0.85rem; color: rgba(250,248,243,0.5);
+    line-height: 1.65; font-weight: 300;
+  }
+
+  .service-tag {
+    display: inline-block; margin-top: 1.4rem;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    opacity: 0; transform: translateY(6px); transition: all 0.3s ease 0.05s;
+  }
+
+  .service-card:hover .service-tag { opacity: 1; transform: translateY(0); }
+
+  /* A PROPOS */
+  .about-section {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center; padding: 7rem 8%;
+  }
+
+  .about-visual { position: relative; height: 520px; }
+
+  .about-img-placeholder {
+    width: 75%; height: 80%;
+    background: linear-gradient(135deg, var(--navy-soft), var(--navy));
+    border-radius: 3px; position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .about-img-placeholder svg { width: 80px; opacity: 0.3; }
+
+  .about-accent-box {
+    position: absolute; bottom: 0; right: 0;
+    width: 55%; height: 55%; background: var(--cream-dark);
+    border-radius: 3px; z-index: 1; border: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 0.5rem; text-align: center; padding: 1.5rem;
+  }
+
+  .about-accent-box .big-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; font-weight: 300; color: var(--navy); line-height: 1;
+  }
+
+  .about-accent-box span {
+    font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+
+  .about-accent-dot {
+    position: absolute; top: 2rem; right: 1.5rem;
+    width: 10px; height: 10px; border-radius: 50%; background: var(--gold);
+  }
+
+  .about-content { padding-right: 2rem; }
+
+  .about-content p {
+    color: var(--text-muted); line-height: 1.75;
+    font-size: 0.97rem; font-weight: 300; margin-bottom: 1.2rem;
+  }
+
+  .about-features { display: flex; flex-direction: column; gap: 0.8rem; margin: 2rem 0; }
+
+  .feature-item {
+    display: flex; align-items: center; gap: 0.9rem;
+    font-size: 0.88rem; color: var(--text-mid);
+  }
+
+  .feature-item::before { content: ''; width: 20px; height: 1px; background: var(--gold); flex-shrink: 0; }
+
+  /* GALERIE */
+  .gallery-section { padding: 7rem 8%; background: var(--cream-dark); }
+
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 280px);
+    gap: 12px; margin-top: 3.5rem;
+  }
+
+  .gallery-item {
+    overflow: hidden; border-radius: 3px;
+    position: relative; background: var(--navy-soft);
+  }
+
+  .gallery-item:nth-child(1) { grid-column: span 5; }
+  .gallery-item:nth-child(2) { grid-column: span 4; }
+  .gallery-item:nth-child(3) { grid-column: span 3; }
+  .gallery-item:nth-child(4) { grid-column: span 3; }
+  .gallery-item:nth-child(5) { grid-column: span 5; }
+  .gallery-item:nth-child(6) { grid-column: span 4; }
+
+  .gallery-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.8rem;
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+    color: rgba(255,255,255,0.2);
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    transition: background 0.3s;
+  }
+
+  .gallery-item:hover .gallery-placeholder {
+    background: linear-gradient(135deg, var(--navy-soft), var(--navy-mid));
+  }
+
+  .gallery-placeholder svg { width: 32px; opacity: 0.3; }
+
+  .gallery-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1rem 1.2rem;
+    background: linear-gradient(transparent, rgba(13,27,42,0.85));
+    color: var(--cream); font-size: 0.75rem; letter-spacing: 0.1em;
+    text-transform: uppercase; opacity: 0; transform: translateY(6px);
+    transition: all 0.3s ease;
+  }
+
+  .gallery-item:hover .gallery-label { opacity: 1; transform: translateY(0); }
+
+  /* PROCESSUS */
+  .process-section {
+    padding: 7rem 8%; background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+
+  .process-section .section-tag { color: var(--gold); }
+  .process-section .section-tag::before { background: var(--gold); }
+  .process-section .section-title { color: var(--cream); }
+
+  .process-steps {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 2px; margin-top: 4rem; position: relative;
+  }
+
+  .process-steps::before {
+    content: ''; position: absolute; top: 28px; left: 5%; right: 5%;
+    height: 1px; background: rgba(201,168,76,0.2); z-index: 0;
+  }
+
+  .process-step {
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    padding: 0 1rem; position: relative; z-index: 1;
+  }
+
+  .step-num {
+    width: 56px; height: 56px; background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.35); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--gold);
+    margin-bottom: 1.5rem; transition: all 0.3s;
+  }
+
+  .process-step:hover .step-num { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+  .process-step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400;
+    color: var(--cream); margin-bottom: 0.6rem;
+  }
+
+  .process-step p {
+    font-size: 0.8rem; color: rgba(250,248,243,0.45);
+    line-height: 1.6; font-weight: 300;
+  }
+
+  /* PATHOLOGIES */
+  .patho-section { padding: 7rem 8%; }
+
+  .patho-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; margin-top: 3.5rem;
+  }
+
+  .patho-card {
+    border: 1px solid var(--border); border-radius: 4px;
+    padding: 2.2rem; transition: all 0.3s ease;
+    position: relative; overflow: hidden;
+  }
+
+  .patho-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
+  }
+
+  .patho-card:hover { box-shadow: 0 20px 60px rgba(13,27,42,0.08); transform: translateY(-3px); }
+  .patho-card:hover::before { transform: scaleX(1); }
+
+  .patho-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400;
+    color: var(--navy); margin: 1rem 0 0.6rem;
+  }
+
+  .patho-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; }
+
+  .patho-badge {
+    display: inline-block; font-size: 0.6rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(201,168,76,0.4);
+    padding: 0.25rem 0.6rem; border-radius: 20px;
+  }
+
+  /* ODF */
+  .tech-section { padding: 7rem 8%; background: var(--cream-dark); }
+
+  .tech-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center; margin-top: 3.5rem;
+  }
+
+  .tech-visual {
+    background: var(--navy); border-radius: 4px;
+    padding: 3rem; display: flex; flex-direction: column;
+    gap: 1.2rem; position: relative; overflow: hidden;
+  }
+
+  .tech-visual::before {
+    content: ''; position: absolute; top: -40%; right: -20%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(201,168,76,0.1), transparent 70%);
+  }
+
+  .tech-feature {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    padding: 1rem; border-radius: 3px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s;
+  }
+
+  .tech-feature:hover { background: rgba(255,255,255,0.08); border-color: rgba(201,168,76,0.2); }
+
+  .tech-feature-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: rgba(201,168,76,0.15); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .tech-feature-icon svg { width: 16px; }
+  .tech-feature-text h5 { font-size: 0.9rem; color: var(--cream); font-weight: 500; margin-bottom: 0.25rem; }
+  .tech-feature-text p { font-size: 0.78rem; color: rgba(250,248,243,0.4); line-height: 1.5; font-weight: 300; }
+
+  .tech-content p {
+    color: var(--text-muted); line-height: 1.75;
+    font-size: 0.97rem; font-weight: 300; margin-bottom: 1.2rem;
+  }
+
+  .tech-highlight {
+    background: var(--navy); border-radius: 4px; padding: 1.8rem;
+    display: flex; gap: 1.5rem; align-items: center; margin-top: 1.5rem;
+  }
+
+  .tech-highlight-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; color: var(--gold); line-height: 1; flex-shrink: 0;
+  }
+
+  .tech-highlight p { color: rgba(250,248,243,0.6); font-size: 0.85rem; margin: 0 !important; line-height: 1.6; }
+
+  /* TEMOIGNAGES */
+  .testimonials-section { padding: 7rem 8%; }
+
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3.5rem;
+  }
+
+  .testimonial-card {
+    padding: 2.2rem; border: 1px solid var(--border);
+    border-radius: 4px; position: relative; transition: all 0.3s;
+  }
+
+  .testimonial-card:hover { border-color: rgba(201,168,76,0.5); box-shadow: 0 15px 50px rgba(13,27,42,0.07); }
+
+  .quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; color: var(--gold); opacity: 0.15;
+    line-height: 0.5; position: absolute; top: 1.5rem; right: 1.5rem;
+  }
+
+  .testimonial-card p {
+    font-size: 0.92rem; color: var(--text-mid);
+    line-height: 1.7; font-style: italic; font-weight: 300; margin-bottom: 1.5rem;
+  }
+
+  .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+
+  .author-avatar {
+    width: 38px; height: 38px; background: var(--navy); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold);
+  }
+
+  .author-info { display: flex; flex-direction: column; gap: 0.15rem; }
+  .author-name { font-size: 0.85rem; font-weight: 500; color: var(--navy); }
+  .author-stars { color: var(--gold); font-size: 0.7rem; }
+
+  /* CONTACT */
+  .contact-section {
+    padding: 7rem 8%; background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+
+  .contact-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  }
+
+  .contact-section .section-tag { color: var(--gold); }
+  .contact-section .section-tag::before { background: var(--gold); }
+  .contact-section .section-title { color: var(--cream); }
+
+  .contact-layout {
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 6rem; margin-top: 4rem; position: relative; z-index: 1;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+
+  .contact-item {
+    display: flex; gap: 1.2rem; padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .contact-item:last-child { border-bottom: none; }
+
+  .contact-item-icon {
+    width: 42px; height: 42px; flex-shrink: 0;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  }
+
+  .contact-item-icon svg { width: 18px; }
+
+  .contact-item-text label {
+    display: block; font-size: 0.65rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.4rem;
+  }
+
+  .contact-item-text p { font-size: 0.92rem; color: rgba(250,248,243,0.7); line-height: 1.5; font-weight: 300; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .form-group label {
+    font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(250,248,243,0.4);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px; padding: 0.9rem 1.1rem;
+    color: var(--cream); font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 300; outline: none; transition: all 0.2s;
+  }
+
+  .form-group select option { background: var(--navy-mid); }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: rgba(201,168,76,0.5); background: rgba(255,255,255,0.08);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(250,248,243,0.2); }
+
+  /* FOOTER */
+  footer {
+    background: #080f17; padding: 3.5rem 8%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--cream);
+  }
+
+  .footer-logo span { color: var(--gold); }
+  footer p { font-size: 0.78rem; color: rgba(250,248,243,0.3); }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+
+  .footer-links a {
+    font-size: 0.75rem; color: rgba(250,248,243,0.35);
+    text-decoration: none; transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* REVEAL */
+  .reveal {
+    opacity: 0; transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { height: 55vw; }
+    .hero-left { padding: 8rem 6% 4rem; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .process-steps::before { display: none; }
+    .about-section, .tech-layout, .contact-layout { grid-template-columns: 1fr; }
+    .about-visual { height: 350px; }
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .patho-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    section, .services-section, .about-section, .gallery-section,
+    .process-section, .patho-section, .tech-section,
+    .testimonials-section, .contact-section { padding: 5rem 5%; }
+    nav { padding: 1rem 5%; }
+    .nav-links { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+    .gallery-item { grid-column: span 1 !important; height: 200px; }
+    .testimonials-grid, .patho-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; text-align: center; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C9.5 2 7.5 3.5 6 5.5C4.5 7.5 4 10 4 12C4 15 5 17.5 7 19C8 19.7 9 20 10 20C11 20 11.5 19.5 12 19.5C12.5 19.5 13 20 14 20C15 20 16 19.7 17 19C19 17.5 20 15 20 12C20 10 19.5 7.5 18 5.5C16.5 3.5 14.5 2 12 2Z" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M8 12C8 10 9 8 11 8" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M16 12C16 10 15 8 13 8" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span>Ghomari Care Dental</span>
+      <span>Excellence du Sourire</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">La Clinique</a></li>
+    <li><a href="#odf">ODF</a></li>
+    <li><a href="#pathologies">Pathologies</a></li>
+    <li><a href="#gallery">Galerie</a></li>
+    <li><a href="#contact" class="nav-cta">Prendre Rendez-vous</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-tag">Cabinet Dentaire — Oran</div>
+    <h1>Votre sourire<br>mérite les<br><em>meilleurs soins</em></h1>
+    <p class="hero-sub">Spécialisés en restauration dentaire, bridges céramiques, gouttières orthodontiques ODF et prise en charge complète des pathologies bucco-dentaires — avec précision et bienveillance.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Prendre Rendez-vous</a>
+      <a href="#services" class="btn-outline">Nos Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">10+</span>
+        <span class="stat-label">Années d'expérience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">2k+</span>
+        <span class="stat-label">Patients traités</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">98%</span>
+        <span class="stat-label">Satisfaction</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual-fallback">
+      <svg class="tooth-svg-hero" viewBox="0 0 200 240" fill="none">
+        <path d="M100 10C75 10 55 25 45 45C35 65 30 85 30 100C30 125 35 150 45 165C50 172 58 175 65 175C70 175 74 173 78 170C82 167 86 165 90 165L100 165L110 165C114 165 118 167 122 170C126 173 130 175 135 175C142 175 150 172 155 165C165 150 170 125 170 100C170 85 165 65 155 45C145 25 125 10 100 10Z" fill="none" stroke="#c9a84c" stroke-width="2"/>
+        <path d="M78 175 C76 185 74 200 72 215 C71 220 69 225 70 228" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M100 165 L100 230" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M122 175 C124 185 126 200 128 215 C129 220 131 225 130 228" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M65 50 C70 45 75 42 80 40" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M60 62 C65 57 72 53 78 52" stroke="rgba(201,168,76,0.25)" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="100" cy="90" r="18" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+        <circle cx="100" cy="90" r="8" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.35)" stroke-width="1"/>
+      </svg>
+      <div class="hero-overlay-card">
+        <p>Offre actuelle</p>
+        <strong>Consultation Gratuite</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-tag">Ce que nous faisons</div>
+      <h2 class="section-title">Des soins dentaires<br><em>complets</em></h2>
+    </div>
+    <p>De la restauration complexe aux gouttières ODF fabriquées en cabinet, nous proposons une prise en charge globale avec les technologies dentaires les plus avancées.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round">
+          <path d="M12 3C9 3 7 5 6 7C5 9 4 11 4 13C4 16 5.5 18.5 7.5 20C8.5 20.5 9.5 21 11 21C12 21 12.5 20.5 13.5 21C15 21 16 20.5 17 20C19 18.5 20 16 20 13C20 11 19 9 18 7C17 5 15 3 12 3Z"/>
+        </svg>
+      </div>
+      <h3>Restauration Dentaire</h3>
+      <p>Restaurations composite et céramique, inlays/onlays et réhabilitation esthétique complète pour redonner beauté et fonction à vos dents.</p>
+      <span class="service-tag">→ En savoir plus</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round">
+          <path d="M3 9C3 7 4.5 5 6.5 5C8.5 5 9.5 7 9.5 9V19H14.5V9C14.5 7 15.5 5 17.5 5C19.5 5 21 7 21 9"/>
+          <line x1="3" y1="9" x2="21" y2="9"/>
+        </svg>
+      </div>
+      <h3>Bridge &amp; Prothèses</h3>
+      <p>Prothèses fixes et amovibles, bridges céramiques et restaurations sur implants — conçus pour la durabilité, le confort et un rendu totalement naturel.</p>
+      <span class="service-tag">→ En savoir plus</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round">
+          <path d="M5 12C5 8.5 7.5 6 10 6H14C16.5 6 19 8.5 19 12V18H5V12Z"/>
+          <path d="M8 6V4M12 6V4M16 6V4"/>
+          <path d="M5 18C5 20 7 22 12 22C17 22 19 20 19 18"/>
+        </svg>
+      </div>
+      <h3>ODF — Gouttières Orthodontiques</h3>
+      <p>Traitement orthodontique par gouttières entièrement numérique et fabriqué au cabinet — discret, confortable, sans brackets ni fils.</p>
+      <span class="service-tag">→ En savoir plus</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 8V12L14 14"/>
+          <path d="M8 12H9"/>
+        </svg>
+      </div>
+      <h3>Pathologies Dentaires</h3>
+      <p>Diagnostic et traitement des caries, pathologies pulpaires, maladies parodontales, lésions muqueuses et dysfonctions de l'ATM.</p>
+      <span class="service-tag">→ En savoir plus</span>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section class="about-section" id="about">
+  <div class="about-visual reveal">
+    <div class="about-img-placeholder">
+      <svg viewBox="0 0 80 80" fill="none" stroke="#c9a84c" stroke-width="1.5">
+        <path d="M40 8C28 8 18 16 14 26C10 36 10 46 14 56C18 66 28 72 40 72C52 72 62 66 66 56C70 46 70 36 66 26C62 16 52 8 40 8Z"/>
+        <path d="M30 35C30 30 34 26 38 26"/>
+        <path d="M50 35C50 30 46 26 42 26"/>
+        <circle cx="40" cy="48" r="8" stroke-dasharray="2 2"/>
+      </svg>
+    </div>
+    <div class="about-accent-box">
+      <div class="about-accent-dot"></div>
+      <span class="big-num">10+</span>
+      <span>Années<br>d'excellence</span>
+    </div>
+  </div>
+  <div class="about-content reveal">
+    <div class="section-tag">Notre Cabinet</div>
+    <h2 class="section-title">Précision et<br><em>bienveillance</em></h2>
+    <p style="margin-top:1.5rem">Le cabinet Ghomari Care Dental a été fondé sur une conviction simple : chaque patient mérite des soins dentaires de haute qualité dans un cadre confortable et rassurant. Notre équipe allie rigueur clinique et outils de dentisterie numérique de pointe.</p>
+    <p>Basé à Oran, nous mettons notre expertise au service de notre communauté — des consultations de routine aux réhabilitations prothétiques les plus complexes.</p>
+    <div class="about-features">
+      <div class="feature-item">Empreinte optique intra-orale (sans alginate inconfortable)</div>
+      <div class="feature-item">Conception et fabrication des gouttières ODF en cabinet</div>
+      <div class="feature-item">Restaurations esthétiques céramique et composite</div>
+      <div class="feature-item">Prise en charge complète des pathologies bucco-dentaires</div>
+      <div class="feature-item">Radiographie panoramique et CBCT disponibles sur place</div>
+    </div>
+    <a href="#contact" class="btn-primary" style="margin-top:1.5rem">Rencontrer notre équipe</a>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="gallery-section" id="gallery">
+  <div class="section-tag reveal">Notre Clinique &amp; Résultats</div>
+  <h2 class="section-title reveal">Un aperçu de<br>notre <em>univers</em></h2>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal">
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="6" width="24" height="20" rx="2"/><circle cx="11" cy="14" r="3"/><path d="M4 26L10 20L14 24L20 16L28 26"/></svg>
+        Intérieur du cabinet
+      </div>
+      <div class="gallery-label">Salle d'attente &amp; Accueil</div>
+    </div>
+    <div class="gallery-item reveal">
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="6" width="24" height="20" rx="2"/><circle cx="11" cy="14" r="3"/><path d="M4 26L10 20L14 24L20 16L28 26"/></svg>
+        Salle de soin
+      </div>
+      <div class="gallery-label">Salle de Soins Moderne</div>
+    </div>
+    <div class="gallery-item reveal">
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="6" width="24" height="20" rx="2"/><circle cx="11" cy="14" r="3"/><path d="M4 26L10 20L14 24L20 16L28 26"/></svg>
+        Scanner intra-oral
+      </div>
+      <div class="gallery-label">Empreinte Optique Numérique</div>
+    </div>
+    <div class="gallery-item reveal">
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="6" width="24" height="20" rx="2"/><circle cx="11" cy="14" r="3"/><path d="M4 26L10 20L14 24L20 16L28 26"/></svg>
+        Avant / Après
+      </div>
+      <div class="gallery-label">Restauration — Avant &amp; Après</div>
+    </div>
+    <div class="gallery-item reveal">
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="6" width="24" height="20" rx="2"/><circle cx="11" cy="14" r="3"/><path d="M4 26L10 20L14 24L20 16L28 26"/></svg>
+        Gouttières ODF
+      </div>
+      <div class="gallery-label">Cas de Gouttières ODF</div>
+    </div>
+    <div class="gallery-item reveal">
+      <div class="gallery-placeholder">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="6" width="24" height="20" rx="2"/><circle cx="11" cy="14" r="3"/><path d="M4 26L10 20L14 24L20 16L28 26"/></svg>
+        Bridge céramique
+      </div>
+      <div class="gallery-label">Résultats Bridge Céramique</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSUS -->
+<section class="process-section">
+  <div class="section-tag reveal">Comment ça se passe</div>
+  <h2 class="section-title reveal">Votre parcours vers<br>un <em>sourire parfait</em></h2>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-num">01</div>
+      <h4>Consultation</h4>
+      <p>Bilan bucco-dentaire complet, radiographies numériques et échange approfondi sur vos objectifs.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">02</div>
+      <h4>Empreinte Optique</h4>
+      <p>Scanner intra-oral 3D — fini l'alginate inconfortable, des modèles précis en quelques minutes.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">03</div>
+      <h4>Plan de Traitement</h4>
+      <p>Plan personnalisé avec simulation visuelle de votre résultat final avant tout acte clinique.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">04</div>
+      <h4>Traitement</h4>
+      <p>Soins précis et guidés numériquement, réalisés avec le matériel le plus moderne pour votre confort.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">05</div>
+      <h4>Suivi</h4>
+      <p>Contrôles réguliers, monitoring à distance pour les patients ODF et maintenance à vie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ODF -->
+<section class="tech-section" id="odf">
+  <div class="section-tag reveal">Orthodontie Numérique</div>
+  <h2 class="section-title reveal">ODF — Gouttières<br><em>Orthodontiques</em></h2>
+  <div class="tech-layout">
+    <div class="tech-visual reveal">
+      <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--cream);font-weight:400;margin-bottom:1.2rem;">Notre Workflow Numérique ODF</h4>
+      <div class="tech-feature">
+        <div class="tech-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8Z"/></svg>
+        </div>
+        <div class="tech-feature-text">
+          <h5>Scanner Intra-Oral</h5>
+          <p>Empreinte optique 3D haute précision — rapide, confortable, sans matériaux d'empreinte.</p>
+        </div>
+      </div>
+      <div class="tech-feature">
+        <div class="tech-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9H21M9 21V9"/></svg>
+        </div>
+        <div class="tech-feature-text">
+          <h5>Planification 3D</h5>
+          <p>Conception du mouvement dentaire étape par étape via BlueSkyPlan et Archform.</p>
+        </div>
+      </div>
+      <div class="tech-feature">
+        <div class="tech-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><path d="M6 3L6 21M18 3L18 21M3 9H21M3 15H21"/></svg>
+        </div>
+        <div class="tech-feature-text">
+          <h5>Impression 3D &amp; Thermoformage</h5>
+          <p>Modèles imprimés et gouttières thermoformées directement au cabinet pour un délai réduit.</p>
+        </div>
+      </div>
+      <div class="tech-feature">
+        <div class="tech-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8V12L15 15"/></svg>
+        </div>
+        <div class="tech-feature-text">
+          <h5>Suivi à Distance</h5>
+          <p>Monitoring numérique du traitement entre les rendez-vous pour une progression optimale.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tech-content reveal">
+      <p>Au cabinet Ghomari Care Dental, nous proposons un <strong style="color:var(--navy)">workflow ODF entièrement numérique et réalisé en interne</strong> — du premier scan à la gouttière de contention finale. Cela garantit qualité, délais réduits et coût maîtrisé.</p>
+      <p>Les gouttières orthodontiques sont idéales pour corriger discrètement les malpositions dentaires sans contrainte de bagues ou de fils. Nous prenons en charge les cas légers à modérés : encombrement, espacement, légères malocclusions.</p>
+      <p>Chaque jeu de gouttières est conçu sur mesure selon votre anatomie dentaire, avec stripping interpoximal (IPR), pose d'attachements et staging planifiés numériquement avant toute fabrication.</p>
+      <div class="tech-highlight">
+        <div class="tech-highlight-num">6–18</div>
+        <p><strong style="color:var(--cream)">mois en moyenne selon la complexité.</strong> Discret, confortable et efficace — l'orthodontie moderne sans compromis esthétique.</p>
+      </div>
+      <a href="#contact" class="btn-primary" style="margin-top:2rem;display:inline-block">Commencer votre traitement ODF</a>
+    </div>
+  </div>
+</section>
+
+<!-- PATHOLOGIES -->
+<section class="patho-section" id="pathologies">
+  <div class="section-tag reveal">Expertise Clinique</div>
+  <h2 class="section-title reveal">Pathologies Dentaires<br>que nous <em>traitons</em></h2>
+  <div class="patho-grid">
+    <div class="patho-card reveal">
+      <span class="patho-badge">Carieux</span>
+      <h3>Caries Dentaires</h3>
+      <p>Des lésions initiales détectées par transillumination aux caries profondes nécessitant un coiffage pulpaire — prise en charge minimalement invasive avec restauration composite.</p>
+    </div>
+    <div class="patho-card reveal">
+      <span class="patho-badge">Endodontie</span>
+      <h3>Pathologies Pulpaires</h3>
+      <p>Pulpite, nécrose pulpaire et abcès périapicaux traités par traitement endodontique de précision sous grossissement optique, avec conservation maximale de la dent.</p>
+    </div>
+    <div class="patho-card reveal">
+      <span class="patho-badge">Parodontologie</span>
+      <h3>Maladies Parodontales</h3>
+      <p>Diagnostic et traitement de la gingivite, parodontite légère à sévère et thérapeutique de soutien pour protéger os alvéolaire et gencives sur le long terme.</p>
+    </div>
+    <div class="patho-card reveal">
+      <span class="patho-badge">Médecine orale</span>
+      <h3>Lésions Muqueuses</h3>
+      <p>Évaluation des aphtes, candidoses, leucoplasies, lichens plans et lésions buccales précoces, avec orientation vers biopsie si nécessaire.</p>
+    </div>
+    <div class="patho-card reveal">
+      <span class="patho-badge">ATM</span>
+      <h3>Dysfonctions de l'ATM</h3>
+      <p>Douleurs, craquements et limitation d'ouverture buccale pris en charge par gouttière occlusale, rééducation et approche interdisciplinaire.</p>
+    </div>
+    <div class="patho-card reveal">
+      <span class="patho-badge">Chirurgie Orale</span>
+      <h3>Extractions &amp; Chirurgie</h3>
+      <p>Extractions simples et chirurgicales dont les dents de sagesse, avec techniques atraumatiques et suivi post-opératoire rigoureux pour une cicatrisation optimale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section class="testimonials-section">
+  <div class="section-tag reveal">Avis Patients</div>
+  <h2 class="section-title reveal">Ce que disent<br>nos <em>patients</em></h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="quote-mark">"</div>
+      <p>Le traitement par gouttières ODF a complètement transformé mon sourire. Le processus était indolore, l'équipe très attentive, et j'ai pu voir la simulation numérique de mon résultat dès le départ.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">S</div>
+        <div class="author-info">
+          <span class="author-name">Samira B.</span>
+          <span class="author-stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="quote-mark">"</div>
+      <p>J'avais besoin d'un bridge céramique complet et j'appréhendais l'intervention. Le Dr Ghomari a tout expliqué étape par étape et le résultat paraît totalement naturel. Cabinet très professionnel.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">K</div>
+        <div class="author-info">
+          <span class="author-name">Karim D.</span>
+          <span class="author-stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="quote-mark">"</div>
+      <p>Après des années à éviter le dentiste, je me sens enfin à l'aise. Le cabinet est moderne et l'équipe très douce. Mes restaurations composites sont encore plus belles que mes dents d'origine !</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">N</div>
+        <div class="author-info">
+          <span class="author-name">Nadia M.</span>
+          <span class="author-stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-tag reveal">Nous Contacter</div>
+  <h2 class="section-title reveal">Prenez votre<br><em>rendez-vous</em></h2>
+  <div class="contact-layout">
+    <div class="contact-info reveal">
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.686 7.134 4 12 4C16.866 4 21 6.686 21 10Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <label>Adresse</label>
+          <p>Ghomari Care Dental<br>Oran, Algérie</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><path d="M6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.94C17.55 15.31 18.76 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.69 6.45 9.06 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <label>Téléphone</label>
+          <p>+213 (0) XX XX XX XX</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"/><path d="M22 6L12 13L2 6"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <label>E-mail</label>
+          <p>contact@ghomaricare.dz</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15 15"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <label>Horaires d'ouverture</label>
+          <p>Dimanche – Jeudi : 8h00 – 18h00<br>Samedi : 9h00 – 14h00</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Prénom</label>
+          <input type="text" placeholder="Ahmed">
+        </div>
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" placeholder="Benali">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Téléphone</label>
+          <input type="tel" placeholder="+213...">
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" placeholder="votre@email.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Service souhaité</label>
+        <select>
+          <option value="">Choisir un service…</option>
+          <option>Restauration Dentaire</option>
+          <option>Bridge &amp; Prothèses</option>
+          <option>ODF — Gouttières Orthodontiques</option>
+          <option>Traitement Parodontal</option>
+          <option>Consultation Générale</option>
+          <option>Pathologie Dentaire</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message (optionnel)</label>
+        <textarea placeholder="Décrivez votre problème ou indiquez vos disponibilités pour un rendez-vous…"></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%;padding:1.1rem;cursor:pointer;font-size:0.82rem;margin-top:0.5rem" onclick="alert('Merci ! Nous vous contacterons sous peu pour confirmer votre rendez-vous.')">Demander un Rendez-vous</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ghomari <span>Care</span> Dental</div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">La Clinique</a></li>
+    <li><a href="#odf">ODF</a></li>
+    <li><a href="#pathologies">Pathologies</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p>&copy; 2025 Ghomari Care Dental — Oran, Algérie.</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.style.padding = '0.9rem 5%';
+      navbar.style.boxShadow = '0 4px 30px rgba(13,27,42,0.08)';
+    } else {
+      navbar.style.padding = '1.4rem 5%';
+      navbar.style.boxShadow = 'none';
+    }
+  });
+</script>
+</body>
+</html>
